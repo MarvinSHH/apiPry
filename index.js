@@ -1,13 +1,8 @@
 const express=require('express')
 const mongoose=require('mongoose')
+
 require('dotenv').config()
 
-// const usersquema=require('./src/routes/users')
-// const moliendasquema=require('./src/routes/molienda')
-// const presentacionsquema=require('./src/routes/presentacion')
-// const variedadsquema=require('./src/routes/variedad')
-// const productossquema=require('./src/routes/productos')
-// const articlesSquema=require('./src/routes/articles')
 const dispositivoSchema=require('./src/routes/dispositivo')
 const productoSchema=require('./src/routes/productos')
 const tipoUsuarioSchema=require('./src/routes/tipoUsuario')
