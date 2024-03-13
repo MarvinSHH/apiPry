@@ -3,35 +3,31 @@ const mongoose=require('mongoose')
 
 require('dotenv').config()
 
-const dispositivoSchema=require('./src/routes/dispositivo')
-const productoSchema=require('./src/routes/productos')
-const tipoUsuarioSchema=require('./src/routes/tipoUsuario')
-const usuarioSchema=require('./src/routes/usuarios')
-
 const app =express()
 const port= process.env.PORT||3000
+
+const device=require('./src/routes/dispositivo')
+const product=require('./src/routes/productos')
+const typeUser=require('./src/routes/tipoUsuario')
+const user=require('./src/routes/usuarios')
+const router = require('./src/routes/usuarios')
 
 
 
 //midlewares
 app.use(express.json())
-
-app.use('/api/',dispositivoSchema)
-app.use('/api/',productoSchema)
-app.use('/api/',tipoUsuarioSchema)
-app.use('/api/',usuarioSchema)
-
-//rutas
-// app.use('/api',usersquema)
-// app.use('/api',moliendasquema)
-// app.use('/api',presentacionsquema)
-// app.use('/api',variedadsquema)
-// app.use('/api',productossquema)
-// app.use('/api',articlesSquema)
+app.use(router)
 
 app.get('/',(req,res)=>{
     res.json({"response":"esto es mmi primer servidor"})
 })
+
+app.use('/api/',device)
+app.use('/api/',product)
+app.use('/api/',typeUser)
+app.use('/api/',user)
+
+
 //coneccion con la base de dato
 mongoose.connect(process.env.mongouri)
 .then(()=>console.log('conectado a la base'))

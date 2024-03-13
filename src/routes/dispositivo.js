@@ -3,6 +3,10 @@ const esquema=require('../models/dispositivo')
 
 const routerd=express.Router()
 
+routerd.get('/dispositivo/prueba',(req,res)=>{
+    res.json({"response":"Prueba Device"})
+})
+
 routerd.post('/dispositivo',(req,res)=>{
     const us= esquema(req.body);
     us.save()
@@ -23,16 +27,7 @@ routerd.get('/dispositivo/:id',(req,res)=>{
     esquema.findById(id)
     .then(data=>res.json(data))
     .catch(error=>res.json({message:error}))
-})
-
-//busqueda por elmail
-routerd.get('/dispositivo/correo/:correo',(req,res)=>{
-    const {correo} = req.params
-    esquema.findOne({ correo })
-      .then(data => res.json(data))
-      .catch(error => res.json({message:error}))
-  })
-  
+}) 
 
 //actualizar dispositivo
 routerd.put('/dispositivo/:id',(req,res)=>{

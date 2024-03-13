@@ -4,5 +4,7 @@ const dispositivoSchema=mongoose.Schema(
         modelo:{type:String,require:false},
         estado:{type:String,require:false},
     }
-)
-module.exports=mongoose.model('Pregunta',dispositivoSchema)
+);
+
+const Dispositivo=mongoose.model('Dispositivo',dispositivoSchema)    
+module.exports=Dispositivo;
