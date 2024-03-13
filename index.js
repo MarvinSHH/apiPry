@@ -22,7 +22,7 @@ app.use(express.json())
 app.use('/api',dispositivoSchema)
 app.use('/api',productoSchema)
 app.use('/api',tipoUsuarioSchema)
-app.use('/api',usuarioSchema)
+app.use('/usuarios',usuarioSchema)
 
 //rutas
 // app.use('/api',usersquema)
