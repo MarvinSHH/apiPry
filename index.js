@@ -11,13 +11,15 @@ const usuarioSchema=require('./src/routes/usuarios')
 const app =express()
 const port= process.env.PORT||3000
 
+
+
 //midlewares
 app.use(express.json())
 
-app.use('/api',dispositivoSchema)
-app.use('/api',productoSchema)
-app.use('/api',tipoUsuarioSchema)
-app.use('/usuarios',usuarioSchema)
+app.use('/api/',dispositivoSchema)
+app.use('/api/',productoSchema)
+app.use('/api/',tipoUsuarioSchema)
+app.use('/api/',usuarioSchema)
 
 //rutas
 // app.use('/api',usersquema)
