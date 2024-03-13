@@ -10,13 +10,11 @@ const device=require('./src/routes/dispositivo')
 const product=require('./src/routes/productos')
 const typeUser=require('./src/routes/tipoUsuario')
 const user=require('./src/routes/usuarios')
-const router = require('./src/routes/usuarios')
 
 
 
 //midlewares
 app.use(express.json())
-app.use(router)
 
 app.get('/',(req,res)=>{
     res.json({"response":"Prueba de Device"})
