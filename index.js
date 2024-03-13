@@ -19,7 +19,7 @@ app.use(express.json())
 app.use(router)
 
 app.get('/',(req,res)=>{
-    res.json({"response":"esto es mmi primer servidor"})
+    res.json({"response":"Prueba de Device"})
 })
 
 app.use('/api/',device)
