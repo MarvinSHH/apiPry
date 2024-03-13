@@ -8,12 +8,21 @@ require('dotenv').config()
 // const variedadsquema=require('./src/routes/variedad')
 // const productossquema=require('./src/routes/productos')
 // const articlesSquema=require('./src/routes/articles')
+const dispositivoSchema=require('./src/routes/dispositivo')
+const productoSchema=require('./src/routes/productos')
+const tipoUsuarioSchema=require('./src/routes/tipoUsuario')
+const usuarioSchema=require('./src/routes/usuarios')
 
 const app =express()
 const port= process.env.port||3000
 
 //midlewares
 app.use(express.json())
+
+app.use('/api',dispositivoSchema)
+app.use('/api',productoSchema)
+app.use('/api',tipoUsuarioSchema)
+app.use('/api',usuarioSchema)
 
 //rutas
 // app.use('/api',usersquema)
