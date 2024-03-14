@@ -6,6 +6,7 @@ const productoSchema = mongoose.Schema(
         descripcion:{type:String,require:true},
         precio:{type:String,require:true},
         categoria:{type:String,require:true},
+        ruta:{type:String,require:true},
     }
 )
 module.exports=mongoose.model('producto',productoSchema)
