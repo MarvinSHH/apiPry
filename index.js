@@ -1,5 +1,6 @@
 const express=require('express')
 const mongoose=require('mongoose')
+import cors from 'cors';
 
 require('dotenv').config()
 
@@ -11,6 +12,25 @@ const product=require('./src/routes/productos')
 const typeUser=require('./src/routes/tipoUsuario')
 const user=require('./src/routes/usuarios')
 
+
+//CORES
+const ACCEPTEP_ORIGINS = [
+    'http://localhost:3000',
+]
+const corsOptions = {
+    origin: function (origin, callback) {
+        if (!origin || ACCEPTEP_ORIGINS.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
+};
+
+app.use(cors());
+app.use(cors({
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 
 
 //midlewares
