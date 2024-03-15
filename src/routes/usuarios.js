@@ -7,7 +7,7 @@ const esquema=require('../models/usuarios')
 const router=express.Router()
 
 // Endpoint de inicio de sesión
-router.post('/login', async (req, res) => {
+router.post('/usuarios/login', async (req, res) => {
     try {
         const usuario = await esquema.findOne({ correo: req.body.correo });
         if (!usuario) {
