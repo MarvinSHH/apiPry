@@ -14,10 +14,10 @@ router.post('/usuarios/login', async (req, res) => {
             return res.status(404).send('Usuario no encontrado');
         }
 
-        const contraseñaValida = await bcrypt.compare(req.body.contraseña, usuario.contraseña);
+        const contraseñaValida = await esquema.findOne({ contraseña: req.body.contraseña });
         const pass= contraseñaValida;
         if (!contraseñaValida) {
-            return res.status(401).send("Invalid Credentials");
+            return res.status(401).send("passwrong");
         }
 
         const token = jwt.sign(
