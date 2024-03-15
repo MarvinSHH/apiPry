@@ -27,7 +27,6 @@ const corsOptions = {
     },
 };
 
-app.use(cors());
 app.use(cors({
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
 }));
