@@ -15,8 +15,9 @@ router.post('/usuarios/login', async (req, res) => {
         }
 
         const contraseñaValida = await bcrypt.compare(req.body.contraseña, usuario.contraseña);
+        const pass= contraseñaValida;
         if (!contraseñaValida) {
-            return res.status(401).send(contraseñaValida);
+            return res.status(401).send(pass);
         }
 
         const token = jwt.sign(
