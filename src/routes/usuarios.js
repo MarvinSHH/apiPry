@@ -17,7 +17,7 @@ router.post('/usuarios/login', async (req, res) => {
         const contraseñaValida = await bcrypt.compare(req.body.contraseña, usuario.contraseña);
         const pass= contraseñaValida;
         if (!contraseñaValida) {
-            return res.status(401).send(pass);
+            return res.status(401).send("Invalid Credentials");
         }
 
         const token = jwt.sign(
