@@ -14,7 +14,7 @@ router.post('/usuarios/login', async (req, res) => {
             return res.status(404).send('Usuario no encontrado');
         }
 
-        const contraseñaValida = await bcrypt.compare(req.body.contraseña, usuario.contraseña);
+        const contraseñaValida = await bcryp.compare(req.body.contraseña, usuario.contraseña);
         if (!contraseñaValida) {
             return res.status(401).send('Contraseña incorrecta');
         }
