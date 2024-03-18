@@ -34,7 +34,7 @@ app.use(
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ response: "Prueba de Devices" });
+  res.json({ response: "Prueba de X" });
 });
 
 app.use("/api/", device);
