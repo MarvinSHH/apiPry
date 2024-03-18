@@ -36,7 +36,9 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.json({ response: "Prueba de X" });
 });
-
+app.get("/xx", (req, res) => {
+  res.json({ response: "Prueba de 2X" });
+});
 app.use("/api/", device);
 app.use("/api/", product);
 app.use("/api/", typeUser);
