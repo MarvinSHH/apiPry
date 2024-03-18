@@ -5,7 +5,7 @@ import cors from "cors";
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3000;
 
 const device = require("./src/routes/dispositivo");
 const product = require("./src/routes/productos");
@@ -34,11 +34,9 @@ app.use(
 app.use(express.json());
 
 app.get("/", (req, res) => {
-  res.json({ response: "Prueba de X" });
+  res.json({ response: "Prueba de Devices" });
 });
-app.get("/xx", (req, res) => {
-  res.json({ response: "Prueba de 2X" });
-});
+
 app.use("/api/", device);
 app.use("/api/", product);
 app.use("/api/", typeUser);
